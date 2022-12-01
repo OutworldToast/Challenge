@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 280, 560);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 560);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
     public static void changeScreen(ActionEvent actionEvent, String location) throws IOException {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(location));
-        Scene scene = new Scene(fxmlLoader.load(), 280, 560);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 560);
         stage.setScene(scene);
         stage.show();
     }
@@ -30,7 +30,7 @@ public class HelloApplication extends Application {
     public static void changeScreenMouse(MouseEvent mouseEvent, String location) throws IOException {
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(location));
-        Scene scene = new Scene(fxmlLoader.load(), 280, 560);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 560);
         stage.setScene(scene);
         stage.show();
     }

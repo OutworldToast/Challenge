@@ -37,7 +37,7 @@ public class LoginController {
     @FXML
     void onLoginClick(ActionEvent event) throws IOException {
         if(checkLogin()) {
-            HelloApplication.changeScreen(event, "hello-view.fxml");
+            HelloApplication.changeScreen(event, "stat-screen.fxml");
         }
         else{
             foutmeldinglabel.setText("Incorrecte Gegevens");
