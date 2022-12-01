@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="543.0" prefWidth="286.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.HelloController">
+<VBox alignment="CENTER" prefHeight="560.0" prefWidth="292.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.LoginController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -20,21 +21,22 @@
       <center>
          <AnchorPane prefHeight="358.0" prefWidth="286.0" BorderPane.alignment="CENTER">
             <children>
-               <Label layoutX="69.0" layoutY="32.0" text="Email" />
-               <TextField layoutX="69.0" layoutY="60.0" promptText="Email" />
-               <TextField layoutX="69.0" layoutY="134.0" promptText="Wachtwoord" />
-               <Label layoutX="69.0" layoutY="107.0" text="Wachtwoord" />
-               <Button layoutX="88.0" layoutY="179.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #28610c;" text="VERDER" textFill="WHITE">
+               <Label fx:id="emaillabel" layoutX="69.0" layoutY="32.0" text="Email" />
+               <TextField fx:id="emailfield" layoutX="69.0" layoutY="60.0" promptText="Email" />
+               <PasswordField fx:id="wachtwoordfield" layoutX="69.0" layoutY="134.0" promptText="Wachtwoord" />
+               <Label fx:id="wachtwoordlabel" layoutX="69.0" layoutY="107.0" text="Wachtwoord" />
+               <Button fx:id="login" layoutX="88.0" layoutY="179.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #28610c;" text="VERDER" textFill="WHITE">
                   <font>
                      <Font size="9.0" />
                   </font>
                </Button>
                <Text layoutX="62.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nieuw? Maak een account aan" />
-               <Button layoutX="87.0" layoutY="302.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #28610c;" text="REGISTREREN" textFill="WHITE">
+               <Button fx:id="register" layoutX="87.0" layoutY="302.0" mnemonicParsing="false" onAction="#onRegisterClick" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #28610c;" text="REGISTREREN" textFill="WHITE">
                   <font>
                      <Font size="9.0" />
                   </font>
                </Button>
+               <Label fx:id="foutmeldinglabel" layoutX="88.0" layoutY="5.0" textFill="#ff0202" />
             </children></AnchorPane>
       </center>
       <top>

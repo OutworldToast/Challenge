@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="543.0" prefWidth="286.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.HelloController">
+<VBox alignment="CENTER" prefHeight="560.0" prefWidth="280.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.RegisterController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -19,26 +19,26 @@
       <center>
          <AnchorPane prefHeight="358.0" prefWidth="286.0" BorderPane.alignment="CENTER">
             <children>
-               <Label layoutX="69.0" layoutY="14.0" text="Naam" />
-               <TextField layoutX="69.0" layoutY="42.0" promptText="Naam" />
-               <TextField layoutX="70.0" layoutY="116.0" promptText="Email" />
-               <Label layoutX="69.0" layoutY="89.0" text="Email" />
-               <Button layoutX="103.0" layoutY="314.0" mnemonicParsing="false" style="-fx-background-color: #28610c;" text="Registreren" />
-               <TextField layoutX="70.0" layoutY="185.0" promptText="Wachtwoord" />
-               <Label layoutX="69.0" layoutY="154.0" text="Wachtwoord" />
-               <TextField layoutX="70.0" layoutY="255.0" promptText="Wachtwoord" />
-               <Label layoutX="69.0" layoutY="225.0" text="Bevestig Wachtwoord" />
+               <Label fx:id="naamlabel" layoutX="69.0" layoutY="14.0" text="Naam" />
+               <TextField fx:id="naamfield" layoutX="69.0" layoutY="42.0" promptText="Naam" />
+               <TextField fx:id="emailfield" layoutX="70.0" layoutY="116.0" promptText="Email" />
+               <Label fx:id="emaillabel" layoutX="69.0" layoutY="89.0" text="Email" />
+               <Button fx:id="registerbutton" layoutX="103.0" layoutY="314.0" mnemonicParsing="false" onAction="#onRegisterClick" style="-fx-background-color: #28610c;" text="Registreren" />
+               <TextField fx:id="wachtwoordfield" layoutX="70.0" layoutY="185.0" promptText="Wachtwoord" />
+               <Label fx:id="wachtwoordlabel" layoutX="69.0" layoutY="154.0" text="Wachtwoord" />
+               <TextField fx:id="bwachtwoordfield" layoutX="70.0" layoutY="255.0" promptText="Wachtwoord" />
+               <Label fx:id="bwachtwoordlabel" layoutX="69.0" layoutY="225.0" text="Bevestig Wachtwoord" />
             </children></AnchorPane>
       </center>
       <top>
          <AnchorPane prefHeight="123.0" prefWidth="286.0" BorderPane.alignment="CENTER">
             <children>
-               <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="252.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="usericon" fitHeight="36.0" fitWidth="34.0" layoutX="252.0" onMouseClicked="#onClickIcon" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Images/AccountIcon.png" />
                   </image>
                </ImageView>
-               <ImageView fitHeight="44.0" fitWidth="184.0" layoutX="51.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="Logo" fitHeight="44.0" fitWidth="184.0" layoutX="51.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Images/Logo.png" />
                   </image>
