@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="543.0" prefWidth="286.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.HelloController">
+<VBox alignment="CENTER" prefHeight="560.0" prefWidth="280.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -17,7 +17,7 @@
         <center>
             <AnchorPane prefHeight="485.0" prefWidth="263.0" BorderPane.alignment="CENTER">
             <children>
-                    <ImageView fitHeight="17.0" fitWidth="115.0" layoutX="92.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fx:id="logo" fitHeight="17.0" fitWidth="115.0" layoutX="92.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@Images/Logo.png" />
                         </image>
@@ -27,12 +27,12 @@
         <top>
             <AnchorPane prefHeight="123.0" prefWidth="286.0" BorderPane.alignment="CENTER">
                 <children>
-                    <ImageView fitHeight="32.0" fitWidth="23.0" layoutX="240.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fx:id="icon" fitHeight="32.0" fitWidth="23.0" layoutX="240.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@Images/AccountIcon.png" />
                         </image>
                     </ImageView>
-                    <Text layoutX="240.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jan" />
+                    <Text fx:id="usernamelabel" layoutX="240.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jan" />
                 </children>
             </AnchorPane>
         </top>
