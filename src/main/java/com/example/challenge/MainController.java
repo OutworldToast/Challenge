@@ -19,4 +19,11 @@ public class MainController {
     @FXML
     private Label welcomeText;
 
+    @FXML
+    private void initialize(){
+        if (!LoginController.getGebruikerID().equals(-1)){
+            usernamelabel.setText(LoginController.getNaam());
+        }
+    }
+
 }
