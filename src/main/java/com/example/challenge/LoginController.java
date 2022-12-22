@@ -24,7 +24,7 @@ public class LoginController {
     private Button login;
 
     @FXML
-    private Button register;
+    private Button registerbutton;
 
     @FXML
     private TextField wachtwoordfield;
@@ -101,7 +101,7 @@ public class LoginController {
     }
 
     @FXML
-    void onRegisterClick(ActionEvent event) throws IOException {
+    private void onRegisterClick(ActionEvent event) throws IOException {
         HelloApplication.changeScreen(event, "register.fxml");
     }
 

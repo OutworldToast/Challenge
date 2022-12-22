@@ -10,7 +10,10 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
+import java.io.IOException;
 
 public class StatScreenController {
 
@@ -63,28 +66,33 @@ public class StatScreenController {
     private Label welcomeText;
 
     @FXML
+    private void onClickIcon(MouseEvent event) throws IOException {//go to user screen
+        //HelloApplication.changeScreenMouse(event, "user-screen.fxml");
+    }
+
+    @FXML
     private void initialize(){
         if (!LoginController.getGebruikerID().equals(-1)){
             usernamelabel.setText(LoginController.getNaam());
         }
     }
     @FXML
-    void OnTemperatuurClick(ActionEvent event) {
+    private void OnTemperatuurClick(ActionEvent event) {
         menutext.setText("Temperatuur");
     }
 
     @FXML
-    void onGrondvochtigheidClick(ActionEvent event) {
+    private void onGrondvochtigheidClick(ActionEvent event) {
         menutext.setText("Grondvochtigheid");
     }
 
     @FXML
-    void onLuchtvochtigheidClick(ActionEvent event) {
+    private void onLuchtvochtigheidClick(ActionEvent event) {
         menutext.setText("Luchtvochtigheid");
     }
 
     @FXML
-    void onWaterverbruikClick(ActionEvent event) {
+    private void onWaterverbruikClick(ActionEvent event) {
         menutext.setText("Waterverbruik");
     }
 

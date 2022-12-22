@@ -38,7 +38,7 @@ public class DatabaseConnection {
     public static void setQuery(String query) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:33060/" + db, user, password);
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + db, user, password);
             Statement stmt = con.createStatement();
             stmt.execute(query);
         } catch (Exception e) {

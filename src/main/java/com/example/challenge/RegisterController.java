@@ -16,6 +16,9 @@ public class RegisterController {
     private ImageView Logo;
 
     @FXML
+    private Label foutmeldinglabel;
+
+    @FXML
     private TextField bwachtwoordfield;
 
     @FXML
@@ -49,13 +52,42 @@ public class RegisterController {
     private Label welcomeText;
 
     @FXML
-    void onClickIcon(MouseEvent event) throws IOException {
+    private void onClickIcon(MouseEvent event) throws IOException {
         HelloApplication.changeScreenMouse(event, "hello-view.fxml");
     }
 
     @FXML
-    void onRegisterClick(ActionEvent event) {
+    private void onRegisterClick(ActionEvent event) {
+        DatabaseConnection database = new DatabaseConnection();
+        String bwachtwoord = bwachtwoordfield.getText();
+        String wachtwoord = wachtwoordfield.getText();
+        String naam = naamfield.getText();
+        String email = emailfield.getText();
+        if(wachtwoord.equals(bwachtwoord) && wachtwoord != "" && naam != "" && email != ""){
+            try {
+                String[][] resultaat = database.getQuery(
+                        "SELECT gebruikerID FROM gebruiker WHERE mailadres = '" + email + "'"
+                );
+                if (resultaat.length == 0) {
+                    database.setQuery(
+                            "INSERT INTO gebruiker (naam, mailadres, wachtwoord) VALUES ('" + naam + "', '" + email + "', '" + wachtwoord + "')"
+                    );
 
+                } else {
+                    foutmeldinglabel.setText("Dit mailadres is al in gebruik");
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else if (!wachtwoord.equals(bwachtwoord)){
+            foutmeldinglabel.setText("Uw wachtwoorden zijn niet gelijk");
+        } else if (naam == "") {
+            foutmeldinglabel.setText("Vul een naam in");
+        } else if (email == "") {
+            foutmeldinglabel.setText("Vul een email in");
+        } else if (wachtwoord == "") {
+            foutmeldinglabel.setText("Vul een wachtwoord in");
+        }
     }
 
 }

@@ -31,12 +31,12 @@
                   </font>
                </Button>
                <Text layoutX="62.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nieuw? Maak een account aan" />
-               <Button fx:id="register" layoutX="87.0" layoutY="302.0" mnemonicParsing="false" onAction="#onRegisterClick" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #28610c;" text="REGISTREREN" textFill="WHITE">
+               <Button fx:id="registerbutton" layoutX="87.0" layoutY="302.0" mnemonicParsing="false" onAction="#onRegisterClick" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #28610c;" text="REGISTREREN" textFill="WHITE">
                   <font>
                      <Font size="9.0" />
                   </font>
                </Button>
-               <Label fx:id="foutmeldinglabel" layoutX="88.0" layoutY="5.0" textFill="#ff0202" />
+               <Label fx:id="foutmeldinglabel" layoutX="69.0" layoutY="5.0" prefHeight="18.0" prefWidth="73.0" textFill="#ff0202" />
             </children></AnchorPane>
       </center>
       <top>
