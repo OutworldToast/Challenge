@@ -11,14 +11,34 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 public class StatScreenController {
 
+    public VBox root;
     @FXML
     private Label dagverbruiklabel;
+
+
+    @FXML
+    private MenuBar hamburgermenu;
+
+    @FXML
+    private Menu hamburgertext;
+
+    @FXML
+    private MenuItem itemhome;
+    @FXML
+    private MenuItem itemabout;
+
+    @FXML
+    private MenuItem itemcontact;
+
+    @FXML
+    private MenuItem itemfaq;
 
     @FXML
     private ImageView icon;
@@ -66,18 +86,16 @@ public class StatScreenController {
     private Label welcomeText;
 
     @FXML
-    private void onClickIcon(MouseEvent event) throws IOException {//go to user screen
-        //HelloApplication.changeScreenMouse(event, "user-screen.fxml");
+    private void initialize(){
+        usernamelabel.setText(LoginController.getNaam());
     }
 
     @FXML
-    private void initialize(){
-        if (!LoginController.getGebruikerID().equals(-1)){
-            usernamelabel.setText(LoginController.getNaam());
-        }
+    private void onClickIcon(MouseEvent event) throws IOException {
+        HelloApplication.changeScreenMouse(event, "user-screen.fxml");
     }
     @FXML
-    private void OnTemperatuurClick(ActionEvent event) {
+    private void onTemperatuurClick(ActionEvent event) {
         menutext.setText("Temperatuur");
     }
 
@@ -94,6 +112,26 @@ public class StatScreenController {
     @FXML
     private void onWaterverbruikClick(ActionEvent event) {
         menutext.setText("Waterverbruik");
+    }
+
+    @FXML
+    private void onHomeClick(ActionEvent event) throws IOException {
+        HelloApplication.changeScreenMenuItem(root,"Main_Screen.fxml");
+    }
+
+    @FXML
+    private void onAboutClick(ActionEvent event) throws IOException {
+        HelloApplication.changeScreenMenuItem(root, "about-screen.fxml");
+    }
+
+    @FXML
+    private void onFaqClick(ActionEvent event) throws IOException {
+        HelloApplication.changeScreenMenuItem(root, "faq-screen.fxml");
+    }
+
+    @FXML
+    private void onContactClick(ActionEvent event) throws IOException {
+        HelloApplication.changeScreenMenuItem(root, "contact-screen.fxml");
     }
 
 }

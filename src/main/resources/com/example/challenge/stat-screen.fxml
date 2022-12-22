@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="560.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.StatScreenController">
+<VBox fx:id="root" alignment="CENTER" prefHeight="560.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.StatScreenController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -46,7 +46,7 @@
                        <MenuItem fx:id="itemwaterverbruik" mnemonicParsing="false" onAction="#onWaterverbruikClick" text="Waterverbruik" />
                          <MenuItem fx:id="itemluchtvochtigheid" mnemonicParsing="false" onAction="#onLuchtvochtigheidClick" text="Luchtvochtigheid" />
                          <MenuItem fx:id="itemgrondvochtigheid" mnemonicParsing="false" onAction="#onGrondvochtigheidClick" text="Grondvochtigheid" />
-                         <MenuItem fx:id="itemtemperatuur" mnemonicParsing="false" onAction="#OnTemperatuurClick" text="Temperatuur" />
+                         <MenuItem fx:id="itemtemperatuur" mnemonicParsing="false" onAction="#onTemperatuurClick" text="Temperatuur" />
                      </items>
                    </Menu>
                  </menus>
@@ -62,6 +62,25 @@
                         </image>
                     </ImageView>
                     <Text fx:id="usernamelabel" layoutX="226.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="error" />
+               <MenuBar fx:id="hamburgermenu" layoutX="-5.0" layoutY="7.0">
+                  <menus>
+                     <Menu fx:id="hamburgertext" mnemonicParsing="false">
+                        <items>
+                           <MenuItem fx:id="itemhome" mnemonicParsing="false" onAction="#onHomeClick" text="Home" />
+                           <MenuItem fx:id="itemabout" mnemonicParsing="false" onAction="#onAboutClick" text="About" />
+                           <MenuItem fx:id="itemfaq" mnemonicParsing="false" onAction="#onFaqClick" text="FAQ" />
+                           <MenuItem fx:id="itemcontact" mnemonicParsing="false" onAction="#onContactClick" text="Contact" />
+                        </items>
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" >
+                                   <image>
+                                       <Image url="@Images/Hamburgericon.png" />
+                                   </image>
+                           </ImageView>
+                        </graphic>
+                     </Menu>
+                  </menus>
+               </MenuBar>
                 </children>
             </AnchorPane>
         </top>

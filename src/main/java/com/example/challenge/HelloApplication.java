@@ -35,6 +35,14 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    public static void changeScreenMenuItem( Node node,String location) throws IOException {
+        Stage stage = (Stage) node.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(location));
+        Scene scene = new Scene(fxmlLoader.load(), 300, 560);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public static void main(String[] args) {
         launch();
     }

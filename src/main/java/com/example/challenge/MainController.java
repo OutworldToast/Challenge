@@ -24,9 +24,7 @@ public class MainController {
 
     @FXML
     private void initialize(){
-        if (!LoginController.getGebruikerID().equals(-1)){
-            usernamelabel.setText(LoginController.getNaam());
-        }
+        usernamelabel.setText(LoginController.getNaam());
     }
     @FXML
     private void onClickIcon(MouseEvent event) throws IOException {

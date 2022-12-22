@@ -61,6 +61,9 @@ public class RegisterController {
         DatabaseConnection database = new DatabaseConnection();
         String bwachtwoord = bwachtwoordfield.getText();
         String wachtwoord = wachtwoordfield.getText();
+        if (bwachtwoordfield.getText().equals(wachtwoordfield.getText())) {
+
+        }
         String naam = naamfield.getText();
         String email = emailfield.getText();
         if(wachtwoord.equals(bwachtwoord) && wachtwoord != "" && naam != "" && email != ""){
