@@ -49,7 +49,7 @@ public class LoginController {
     @FXML
     void onLoginClick(ActionEvent event) throws IOException {
         if(checkLogin()) {
-            HelloApplication.changeScreen(event, "stat-screen.fxml");
+            HelloApplication.changeScreen(event, "Main_screen.fxml");
         }
     }
 

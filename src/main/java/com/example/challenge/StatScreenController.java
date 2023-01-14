@@ -1,6 +1,7 @@
 package com.example.challenge;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -47,6 +48,12 @@ public class StatScreenController {
     private Label informatielabel;
 
     @FXML
+    private MenuBar plantmenu;
+
+    @FXML
+    private Menu menutextplant;
+
+    @FXML
     private MenuBar informatiemenu;
 
     @FXML
@@ -85,9 +92,44 @@ public class StatScreenController {
     @FXML
     private Label welcomeText;
 
+    private String plantid;
+
     @FXML
     private void initialize(){
         usernamelabel.setText(LoginController.getNaam());
+
+    }
+
+    @FXML
+    private void getPlants(){
+        DatabaseConnection database = new DatabaseConnection();
+        String ID = LoginController.getGebruikerID();
+        String [][] resultaat1 = database.getQuery(
+                "SELECT count(*) FROM apparaat WHERE gebruiker ='" + ID + "'"
+        );
+        try {
+            if (resultaat1.length > 0) {
+                int aantal = Integer.parseInt(resultaat1[0][0]);
+                String [][] resultaat2 = database.getQuery(
+                        "SELECT naam, id FROM apparaat WHERE gebruiker ='" + ID + "'"
+                );
+                for (int i = 0; i < aantal; i++) {
+                    String naam = resultaat2[0][i];
+                    String id = resultaat2[1][i];
+                    MenuItem item = new MenuItem(naam);
+                    item.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            menutextplant.setText(naam);
+                            plantid = id;
+                        }
+                    });
+                    menutextplant.getItems().addAll(item);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @FXML

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="root" alignment="CENTER" prefHeight="560.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.MainController">
+<VBox fx:id="root" alignment="CENTER" prefHeight="560.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.challenge.AboutController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -25,18 +25,6 @@
                             <Image url="@Images/Logo.png" />
                         </image>
                     </ImageView>
-               <ImageView fitHeight="136.0" fitWidth="147.0" layoutX="58.0" layoutY="29.0" onMouseClicked="#onClickPlant" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@Images/PlantIcon.png" />
-                  </image>
-               </ImageView>
-               <Label ellipsisString="" layoutX="102.0" layoutY="161.0" text="Uw BioPals" />
-               <ImageView fitHeight="92.0" fitWidth="129.0" layoutX="86.0" layoutY="206.0" onMouseClicked="#onClickPlus" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@Images/PlusIcon.png" />
-                  </image>
-               </ImageView>
-               <Label layoutX="85.0" layoutY="306.0" text="BioPal Connecten" />
                 </children></AnchorPane>
         </center>
         <top>

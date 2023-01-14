@@ -39,7 +39,7 @@
                <Label fx:id="dagverbruiklabel" layoutX="14.0" layoutY="107.0" text="Verbruik per dag" />
                <Label fx:id="weekverbruiklabel" layoutX="171.0" layoutY="107.0" text="Verbruik per week" />
                <Label fx:id="informatielabel" layoutX="115.0" text="Informatie" />
-               <MenuBar fx:id="informatiemenu" layoutX="89.0" layoutY="32.0">
+               <MenuBar fx:id="informatiemenu" layoutX="14.0" layoutY="32.0">
                  <menus>
                    <Menu fx:id="menutext" mnemonicParsing="false" text="Selecteer Data">
                      <items>
@@ -49,6 +49,11 @@
                          <MenuItem fx:id="itemtemperatuur" mnemonicParsing="false" onAction="#onTemperatuurClick" text="Temperatuur" />
                      </items>
                    </Menu>
+                 </menus>
+               </MenuBar>
+               <MenuBar fx:id="plantmenu" layoutX="153.0" layoutY="32.0">
+                 <menus>
+                   <Menu fx:id="menutextplant" mnemonicParsing="false" text="Selecteer Plant" />
                  </menus>
                </MenuBar>
                 </children></AnchorPane>
@@ -72,7 +77,7 @@
                            <MenuItem fx:id="itemcontact" mnemonicParsing="false" onAction="#onContactClick" text="Contact" />
                         </items>
                         <graphic>
-                           <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" >
+                           <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                    <image>
                                        <Image url="@Images/Hamburgericon.png" />
                                    </image>
