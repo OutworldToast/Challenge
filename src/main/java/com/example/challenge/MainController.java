@@ -10,23 +10,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-public class MainController {
-
-    public VBox root;
-
-    @FXML
-    private ImageView icon;
-
-    @FXML
-    private ImageView logo;
-
-    @FXML
-    private Text usernamelabel;
-
-    @FXML
-    private void initialize(){
-        usernamelabel.setText(LoginController.getNaam());
-    }
+public class MainController extends Template {
 
     @FXML
     private void onClickPlant(MouseEvent event) throws IOException {
@@ -37,28 +21,9 @@ public class MainController {
     private void onClickPlus(MouseEvent event) throws IOException {
         HelloApplication.changeScreenMouse(event, "connect-scherm.fxml");
     }
-    @FXML
-    private void onClickIcon(MouseEvent event) throws IOException {
-        HelloApplication.changeScreenMouse(event, "user-screen.fxml");
-    }
 
-    @FXML
-    private void onHomeClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root,"Main_Screen.fxml");
-    }
+    @Override
+    void start() {
 
-    @FXML
-    private void onAboutClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "about-screen.fxml");
-    }
-
-    @FXML
-    private void onFaqClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "faq-screen.fxml");
-    }
-
-    @FXML
-    private void onContactClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "contact-screen.fxml");
     }
 }

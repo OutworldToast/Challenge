@@ -33,7 +33,7 @@
                <Label fx:id="wachtwoordlabel" layoutX="69.0" layoutY="154.0" text="Wachtwoord" />
                <PasswordField fx:id="bwachtwoordfield" layoutX="70.0" layoutY="255.0" promptText="Wachtwoord" />
                <Label fx:id="bwachtwoordlabel" layoutX="69.0" layoutY="225.0" text="Bevestig Wachtwoord" />
-               <Label fx:id="foutmeldinglabel" layoutX="69.0" layoutY="-8.0" textFill="#ff0202"/>
+               <Label fx:id="foutmeldinglabel" layoutX="69.0" layoutY="-8.0" textFill="RED"/>
             </children></AnchorPane>
       </center>
       <top>

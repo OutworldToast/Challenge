@@ -3,26 +3,13 @@ package com.example.challenge;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 
-public class ConnectController {
+public class ConnectController extends Template {
 
-    public VBox root;
-
-    @FXML
-    private ImageView icon;
-
-    @FXML
-    private ImageView logo;
-
-    @FXML
-    private Text usernamelabel;
 
     @FXML
     private Label message;
@@ -34,15 +21,11 @@ public class ConnectController {
     private TextField naamfield;
 
     @FXML
-    private void initialize(){
-        usernamelabel.setText(LoginController.getNaam());
-    }
-
-    @FXML
     private void onClickButton(ActionEvent event) throws IOException {
         DatabaseConnection database = new DatabaseConnection();
         String code = codefield.getText();
         String naam = naamfield.getText();
+        message.setTextFill(Color.RED);
         try {
             if (code != "" && naam != "") {
                 String resultaat[][] = database.getQuery(
@@ -55,6 +38,7 @@ public class ConnectController {
                                 "UPDATE apparaat SET status = 'verbonden', gebruiker = '"
                                         + id + "', naam = '" + naam +  "' WHERE apparaatID = '" + code + "'"
                         );
+                        message.setTextFill(Color.GREEN);
                         message.setText("Uw BioPal is geregistreerd");
                     }
                     else {message.setText("De BioPal is niet beschikbaar");}
@@ -66,28 +50,8 @@ public class ConnectController {
         }
     }
 
-    @FXML
-    private void onClickIcon(MouseEvent event) throws IOException {
-        HelloApplication.changeScreenMouse(event, "user-screen.fxml");
-    }
+    @Override
+    void start() {
 
-    @FXML
-    private void onHomeClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root,"Main_Screen.fxml");
-    }
-
-    @FXML
-    private void onAboutClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "about-screen.fxml");
-    }
-
-    @FXML
-    private void onFaqClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "faq-screen.fxml");
-    }
-
-    @FXML
-    private void onContactClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "contact-screen.fxml");
     }
 }

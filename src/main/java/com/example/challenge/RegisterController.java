@@ -53,7 +53,7 @@ public class RegisterController {
 
     @FXML
     private void onClickIcon(MouseEvent event) throws IOException {
-        HelloApplication.changeScreenMouse(event, "hello-view.fxml");
+        HelloApplication.changeScreenMouse(event, "login_screen.fxml");
     }
 
     @FXML

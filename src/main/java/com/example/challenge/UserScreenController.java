@@ -1,58 +1,127 @@
 package com.example.challenge;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-import java.io.IOException;
-
-public class UserScreenController {
-
-    public VBox root;
+public class UserScreenController extends Template{
 
     @FXML
-    private ImageView icon;
+    private Menu menutextplant;
 
     @FXML
-    private ImageView logo;
+    private Menu menutext;
 
     @FXML
-    private Text usernamelabel;
+    private String plantid;
 
     @FXML
-    private void initialize(){
-        usernamelabel.setText(LoginController.getNaam());
+    private TextField naamfield;
+
+    @FXML
+    private TextField emailfield;
+
+    @FXML
+    private TextField locatiefield;
+
+    @FXML
+    private TextField oudfield;
+
+    @FXML
+    private TextField nieuwfield;
+
+    @FXML
+    private TextField bnieuwfield;
+
+    @FXML
+    private Text errormessage;
+
+    @Override
+    void start() {
+        getPlants();
     }
 
     @FXML
-    private void onClickIcon(MouseEvent event) throws IOException {
-        HelloApplication.changeScreenMouse(event, "user-screen.fxml");
+    void updateData(String datatype, String data) {
+        DatabaseConnection database = new DatabaseConnection();
+        String id = LoginController.getGebruikerID();
+        try {
+            database.setQuery("UPDATE gebruiker SET " + datatype + "= '" + data + "' WHERE gebruikerID = '" + id + "'");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @FXML
-    private void onHomeClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root,"Main_Screen.fxml");
+    void leegMessage(String datatype) {
+        errormessage.setText("Voer een " + datatype + " in");
+        errormessage.setFill(Color.RED);
     }
 
     @FXML
-    private void onAboutClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "about-screen.fxml");
+    void geslaagdMessage(){
+        errormessage.setText("Gelukt!");
+        errormessage.setFill(Color.GREEN);
     }
 
     @FXML
-    private void onFaqClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "faq-screen.fxml");
+    void veranderEmail(ActionEvent event) {
+        String email = emailfield.getText();
+        if (!email.isEmpty()) {
+            updateData("mailadres", email);
+        } else {leegMessage("email");}
     }
 
     @FXML
-    private void onContactClick(ActionEvent event) throws IOException {
-        HelloApplication.changeScreenMenuItem(root, "contact-screen.fxml");
+    void veranderLocatie(ActionEvent event) {
+        String locatie = locatiefield.getText();
+        if (!locatie.isEmpty()) {
+            updateData("locatie", locatie);
+        } else {leegMessage("locatie");}
+    }
+
+    @FXML
+    void veranderNaam(ActionEvent event) {
+        String naam = naamfield.getText();
+        if (!naam.isEmpty()) {
+            updateData("naam", naam);
+        } else {leegMessage("naam");}
+    }
+
+    @FXML
+    void veranderWachtwoord(ActionEvent event) {
+
+    }
+
+    private void getPlants(){
+        DatabaseConnection database = new DatabaseConnection();
+        String ID = LoginController.getGebruikerID();
+        String [][] resultaat1 = database.getQuery(
+                "SELECT count(*) FROM apparaat WHERE gebruiker ='" + ID + "'"
+        );
+        try {
+            if (resultaat1.length > 0) {
+                int aantal = Integer.parseInt(resultaat1[0][0]);
+                String [][] resultaat2 = database.getQuery(
+                        "SELECT naam, apparaatID FROM apparaat WHERE gebruiker ='" + ID + "'"
+                );
+                for (int i = 0; i < aantal; i++) {
+                    String naam = resultaat2[i][0];
+                    String id = resultaat2[i][1];
+                    MenuItem item = new MenuItem(naam);
+                    item.setOnAction(event -> {
+                        menutextplant.setText(naam);
+                        plantid = id;
+                    });
+                    menutextplant.getItems().addAll(item);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

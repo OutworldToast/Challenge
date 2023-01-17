@@ -22,17 +22,17 @@
         <center>
             <AnchorPane prefHeight="485.0" prefWidth="263.0" BorderPane.alignment="CENTER">
                 <children>
-                    <ImageView fx:id="logo" fitHeight="17.0" fitWidth="115.0" layoutX="92.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fx:id="logo" fitHeight="17.0" fitWidth="115.0" layoutX="92.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@Images/Logo.png" />
                         </image>
                     </ImageView>
                <TextField fx:id="codefield" layoutX="56.0" layoutY="123.0" promptText="Code" />
-               <TextField fx:id="naamfield" layoutX="56.0" layoutY="248.0" promptText="Naam" />
+               <TextField fx:id="naamfield" layoutX="56.0" layoutY="193.0" promptText="Naam" />
                <Label layoutX="56.0" layoutY="96.0" text="Uw BioPal code" />
-               <Label layoutX="56.0" layoutY="221.0" text="Geef uw BioPal een naam" />
+               <Label layoutX="56.0" layoutY="163.0" text="Geef uw BioPal een naam" />
                <Label fx:id="message" layoutX="56.0" layoutY="63.0" />
-               <Button layoutX="97.0" layoutY="288.0" mnemonicParsing="false" onAction="#onClickButton" text="Button" />
+               <Button layoutX="97.0" layoutY="236.0" mnemonicParsing="false" onAction="#onClickButton" style="-fx-background-color: #28610c;" text="VERBIND" textFill="WHITE" />
                 </children></AnchorPane>
         </center>
         <top>

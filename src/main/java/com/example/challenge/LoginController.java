@@ -14,25 +14,10 @@ public class LoginController {
     private TextField emailfield;
 
     @FXML
-    private Label emaillabel;
-
-    @FXML
     private Label foutmeldinglabel;
 
     @FXML
-    private Button login;
-
-    @FXML
-    private Button registerbutton;
-
-    @FXML
     private TextField wachtwoordfield;
-
-    @FXML
-    private Label wachtwoordlabel;
-
-    @FXML
-    private Label welcomeText;
 
     private static String gebruikerID = "-1";
 
