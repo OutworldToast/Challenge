@@ -48,11 +48,12 @@ public class ConnectController {
                 String resultaat[][] = database.getQuery(
                         "SELECT status FROM apparaat WHERE apparaatID = '" + code + "'"
                 );
+                String id = LoginController.getGebruikerID();
                 if (resultaat.length == 1) {
                     if (resultaat[0][0].equals("inactief")) {
                         database.setQuery(
                                 "UPDATE apparaat SET status = 'verbonden', gebruiker = '"
-                                        + LoginController.getGebruikerID() + "' WHERE apparaatID = '" + code + "'"
+                                        + id + "', naam = '" + naam +  "' WHERE apparaatID = '" + code + "'"
                         );
                         message.setText("Uw BioPal is geregistreerd");
                     }

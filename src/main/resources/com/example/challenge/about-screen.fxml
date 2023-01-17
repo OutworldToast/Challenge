@@ -25,6 +25,7 @@
                             <Image url="@Images/Logo.png" />
                         </image>
                     </ImageView>
+               <Text layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wij van Biopal zijn 5 enthousiaste studenten&#10; die een deeloplossing hebben bedacht &#10;voor de SDG verantwoorde consumptie en productie. &#10;Wat ons heeft gedreven om de Biopal te ontwikkelen &#10;is  de enorme verspilling van water in Nederland. &#10;&#10;Er wordt per jaar gemiddeld 1,2 miljoen m3 &#10;aan water verspild door huishoudens en bedrijven. &#10;Om deze verspilling te verminderen &#10;hebben wij de Biopal ontwikkeld. &#10;&#10;De Biopal omvat een geautomatiseerd &#10;watertoevoeging systeem voor planten dat hiernaast &#10;gegevens terugkoppelt aan de gebruiker over &#10;zijn waterverbruik, de temperatuur, de luchtvochtigheid &#10;en de grondvochtigheid van de plantenbak/kas. " />
                 </children></AnchorPane>
         </center>
         <top>

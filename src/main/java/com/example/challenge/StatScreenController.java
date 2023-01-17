@@ -97,6 +97,7 @@ public class StatScreenController {
     @FXML
     private void initialize(){
         usernamelabel.setText(LoginController.getNaam());
+        getPlants();
 
     }
 
@@ -111,11 +112,11 @@ public class StatScreenController {
             if (resultaat1.length > 0) {
                 int aantal = Integer.parseInt(resultaat1[0][0]);
                 String [][] resultaat2 = database.getQuery(
-                        "SELECT naam, id FROM apparaat WHERE gebruiker ='" + ID + "'"
+                        "SELECT naam, apparaatID FROM apparaat WHERE gebruiker ='" + ID + "'"
                 );
                 for (int i = 0; i < aantal; i++) {
-                    String naam = resultaat2[0][i];
-                    String id = resultaat2[1][i];
+                    String naam = resultaat2[i][0];
+                    String id = resultaat2[i][1];
                     MenuItem item = new MenuItem(naam);
                     item.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
