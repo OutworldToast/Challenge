@@ -19,6 +19,9 @@ public class LoginController {
     @FXML
     private TextField wachtwoordfield;
 
+    @FXML
+    private int teller = 0;
+
     private static String gebruikerID = "-1";
 
     public static String getGebruikerID() {
@@ -33,7 +36,9 @@ public class LoginController {
 
     @FXML
     void onLoginClick(ActionEvent event) throws IOException {
+        teller++;
         if(checkLogin()) {
+            teller = 0;
             HelloApplication.changeScreen(event, "Main_screen.fxml");
         }
     }

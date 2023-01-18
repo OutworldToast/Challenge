@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -28,16 +27,8 @@
                             <Image url="@Images/Logo.png" />
                         </image>
                     </ImageView>
-               <BarChart fx:id="usagechart" layoutX="-16.0" layoutY="149.0" prefHeight="186.0" prefWidth="302.0">
-                 <xAxis>
-                   <CategoryAxis fx:id="horizontaleaxis" label="Horizontale Axis" side="BOTTOM" />
-                 </xAxis>
-                 <yAxis>
-                   <NumberAxis fx:id="verticaleaxis" label="Verticale Axis" side="LEFT" />
-                 </yAxis>
-               </BarChart>
-               <Label fx:id="dagverbruiklabel" layoutX="14.0" layoutY="107.0" text="Verbruik per dag" />
-               <Label fx:id="weekverbruiklabel" layoutX="171.0" layoutY="107.0" text="Verbruik per week" />
+               <Label fx:id="dagverbruiklabel" layoutX="14.0" layoutY="107.0" onMouseClicked="#onPerdagclick" text="Verbruik per dag" />
+               <Label fx:id="weekverbruiklabel" layoutX="171.0" layoutY="107.0" onMouseClicked="#onPerweekclick" text="Verbruik per week" />
                <Label fx:id="informatielabel" layoutX="115.0" text="Informatie" />
                <MenuBar fx:id="informatiemenu" layoutX="14.0" layoutY="32.0">
                  <menus>
@@ -56,6 +47,14 @@
                    <Menu fx:id="menutextplant" mnemonicParsing="false" text="Selecteer Plant" />
                  </menus>
                </MenuBar>
+               <LineChart fx:id="usagechart" layoutX="-9.0" layoutY="141.0" prefHeight="222.0" prefWidth="316.0">
+                 <xAxis>
+                   <NumberAxis label="Tijd" side="BOTTOM" fx:id="xAxis" />
+                 </xAxis>
+                 <yAxis>
+                   <NumberAxis side="LEFT" />
+                 </yAxis>
+               </LineChart>
                 </children></AnchorPane>
         </center>
         <top>
