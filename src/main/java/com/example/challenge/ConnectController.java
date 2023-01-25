@@ -33,7 +33,7 @@ public class ConnectController extends Template {
                 );
                 String id = LoginController.getGebruikerID();
                 if (resultaat.length == 1) {
-                    if (resultaat[0][0].equals("inactief")) {
+                    if (resultaat[0][0].equals("Inactief")) {
                         database.setQuery(
                                 "UPDATE apparaat SET status = 'verbonden', gebruiker = '"
                                         + id + "', naam = '" + naam +  "' WHERE apparaatID = '" + code + "'"

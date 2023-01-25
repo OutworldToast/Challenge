@@ -34,12 +34,18 @@ public class LoginController {
         return naam;
     }
 
+    public static void setNaam(String naam) {
+        LoginController.naam = naam;
+    }
+
     @FXML
     void onLoginClick(ActionEvent event) throws IOException {
         teller++;
-        if(checkLogin()) {
+        if(checkLogin() && teller < 5) {
             teller = 0;
             HelloApplication.changeScreen(event, "Main_screen.fxml");
+        } else if (teller > 5) {
+            foutmeldinglabel.setText("U heeft te vaak ingelogd");
         }
     }
 

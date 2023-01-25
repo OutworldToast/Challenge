@@ -54,6 +54,7 @@ public class UserScreenController extends Template{
         } catch (Exception e) {
             System.out.println(e);
         }
+        LoginController.setNaam(data);
     }
 
     @FXML
